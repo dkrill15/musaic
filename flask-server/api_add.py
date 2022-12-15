@@ -5,8 +5,8 @@ import process_images as process
 
 def add_song(query, left):
 
-    CLIENT_ID = '617bb37b7d4a4dfb89e88d56d6074af3'
-    CLIENT_SECRET = '1fc50298d4b641e8abe1085658c1f715'
+    CLIENT_ID = 'ID HERE'
+    CLIENT_SECRET = 'SECRET HERE'
 
     AUTH_URL = 'https://accounts.spotify.com/api/token'
 
