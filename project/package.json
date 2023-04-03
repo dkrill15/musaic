@@ -1,0 +1,46 @@
+{
+  "name": "project",
+  "version": "0.1.0",
+  "private": false,
+  "homepage": "/cse30246/musaic/project/build/",
+  "dependencies": {
+    "@appbaseio/reactivesearch": "^3.43.6",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/material": "^5.10.17",
+    "classnames": "^2.2.6",
+    "isexe": "^2.0.0",
+    "lodash": "^4.17.15",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^5.0.1",
+    "react-select": "^5.7.0",
+    "sass": "^1.49.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cruip/open-react-template.git"
+  },
+  "scripts": {
+    "start": "PORT=5009 react-scripts --openssl-legacy-provider start",
+    "build": "react-scripts  build && chmod -R 777 ./ 2> /dev/null",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
