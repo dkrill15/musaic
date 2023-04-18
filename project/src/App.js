@@ -42,10 +42,10 @@ const App = () => {
           <div className="App">
             <Header/>
             <Switch>
-              <Route exact path="/cse30246/musaic/project/build/"> <MusaicHome/>   </Route>
-              <Route path="/cse30246/musaic/project/build/about" > <MusaicAbout/>  </Route>
-              <Route path="/cse30246/musaic/project/build/create"> <MusaicCreate/> </Route>
-              <Route path="/cse30246/musaic/project/build/musify"> <MusaicMusify/> </Route>
+              <Route exact path="/"> <MusaicHome/>   </Route> 
+              <Route path="about" > <MusaicAbout/>  </Route>
+              <Route path="create"> <MusaicCreate/> </Route>
+              <Route path="projemusify"> <MusaicMusify/> </Route>
             </Switch>
           </div>
         </Router>

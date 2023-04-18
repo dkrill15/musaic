@@ -23,7 +23,7 @@
     "url": "https://github.com/cruip/open-react-template.git"
   },
   "scripts": {
-    "start": "react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts start",
     "build": "react-scripts  build && chmod -R 777 ./ 2> /dev/null",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
