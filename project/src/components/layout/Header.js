@@ -159,16 +159,16 @@ const Header = ({
                       <Link to="about" onClick={navigateToAbout}>About</Link>
                     </li> */}
                     <li>
-                      <Link to="/cse30246/musaic/project/build/">Home</Link>
+                      <Link to="/">Home</Link>
                     </li>
                     <li>
-                      <Link to="/cse30246/musaic/project/build/about">About</Link>
+                      <Link to="/about">About</Link>
                     </li>
                     <li>
-                      <Link to="/cse30246/musaic/project/build/create">Create</Link>
+                      <Link to="/create">Create</Link>
                     </li>
                     <li>
-                      <Link to="/cse30246/musaic/project/build/musify">Musify</Link>
+                      <Link to="/musify">Musify</Link>
                     </li>
                   </ul>
                   {/* {!hideSignin &&

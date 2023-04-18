@@ -43,9 +43,9 @@ const App = () => {
             <Header/>
             <Switch>
               <Route exact path="/"> <MusaicHome/>   </Route> 
-              <Route path="about" > <MusaicAbout/>  </Route>
-              <Route path="create"> <MusaicCreate/> </Route>
-              <Route path="projemusify"> <MusaicMusify/> </Route>
+              <Route path="/about" > <MusaicAbout/>  </Route>
+              <Route path="/create"> <MusaicCreate/> </Route>
+              <Route path="/musify"> <MusaicMusify/> </Route>
             </Switch>
           </div>
         </Router>
