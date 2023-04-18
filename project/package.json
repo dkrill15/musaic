@@ -2,7 +2,7 @@
   "name": "project",
   "version": "0.1.0",
   "private": false,
-  "homepage": "/cse30246/musaic/project/build/",
+  "homepage": "",
   "dependencies": {
     "@appbaseio/reactivesearch": "^3.43.6",
     "@emotion/react": "^11.10.5",
@@ -23,7 +23,7 @@
     "url": "https://github.com/cruip/open-react-template.git"
   },
   "scripts": {
-    "start": "PORT=5009 react-scripts --openssl-legacy-provider start",
+    "start": "react-scripts --openssl-legacy-provider start",
     "build": "react-scripts  build && chmod -R 777 ./ 2> /dev/null",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
