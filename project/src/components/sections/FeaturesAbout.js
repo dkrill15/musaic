@@ -109,7 +109,7 @@ Our application makes it easy to transform music preferences into collage art. O
             <div className="split-item">
                 <div className="split-item-content center-content-mobile">
                     <div className="center-content mt-0 mb-12">
-                        Claudia Kuczun
+                        Claudia "Can't Handle a Surprise" Kuczun
                         <Image
                         src={require('./../../assets/images/claud.jpeg')}
                         alt="About Team Image"
