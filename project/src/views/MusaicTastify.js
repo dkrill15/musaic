@@ -4,7 +4,6 @@ import axios from 'axios';
 import Plot from 'react-plotly.js';
 import GenericSection from '../components/sections/GenericSection';
 import Button from "../components/elements/Button"
-import { stackOrderDescending } from "d3";
 import ArtistSelect from '../components/elements/ArtistSelect';
 import { SectionSplitProps } from '../utils/SectionProps';
 import classNames from 'classnames';
