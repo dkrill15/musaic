@@ -4,9 +4,9 @@ import csv
 
 # globals
 hostname = 'localhost'
-username = 'ckuczun'
-pw = 'pwpwpwpw'
-db = 'ckuczun'
+username = 'root'
+pw = 'unebarque3'
+db = 'musaic'
 
 
 # create connection to communicate with DB

@@ -17,7 +17,9 @@ import MusaicHome from "./views/MusaicHome";
 import MusaicAbout from "./views/MusaicAbout";
 import MusaicCreate from "./views/MusaicCreate";
 import MusaicMusify from "./views/MusaicMusify";
+import MusaicTaste from "./views/MusaicTaste";
 import Header from './components/layout/Header';
+import MusaicTastify from "./views/MusaicTastify";
 
 const App = () => {
   const childRef = useRef();
@@ -46,6 +48,7 @@ const App = () => {
               <Route path="/about" > <MusaicAbout/>  </Route>
               <Route path="/create"> <MusaicCreate/> </Route>
               <Route path="/musify"> <MusaicMusify/> </Route>
+              <Route path="/taste"> <MusaicTastify/> </Route>
             </Switch>
           </div>
         </Router>

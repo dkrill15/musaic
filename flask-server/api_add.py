@@ -2,11 +2,13 @@ import requests
 import json
 import sql_functions as sql
 import process_images as process
+import base64
+import spotipy
+from spotipy.oauth2 import SpotifyOAuth
 
-def add_song(query, left):
-
-    CLIENT_ID = 'ID HERE'
-    CLIENT_SECRET = 'SECRET HERE'
+def api_access():
+    CLIENT_ID = '617bb37b7d4a4dfb89e88d56d6074af3'
+    CLIENT_SECRET = '1fc50298d4b641e8abe1085658c1f715'
 
     AUTH_URL = 'https://accounts.spotify.com/api/token'
 
@@ -26,6 +28,12 @@ def add_song(query, left):
     headers = {
         'Accept' : 'application/json',  'Content-Type': 'application/json', 'Authorization': 'Bearer {token}'.format(token=access_token)
     }
+    
+    return headers
+
+def add_song(query, left):
+
+    headers = api_access()
 
 
     # base URL of all Spotify API endpoints
@@ -124,3 +132,22 @@ def add_song(query, left):
 
 
     return images
+
+
+
+def user_login():
+
+    sp = spotipy.Spotify(auth_manager=SpotifyOAuth(client_id='your_client_id',
+                                                   client_secret='your_client_secret',
+                                                   redirect_uri='your_redirect_uri',
+                                                   scope='user-top-read'))
+
+    # Call the current_user_top_artists method to get the user's top artists.
+    # You can adjust the time range and limit parameters to control what data is returned.
+    results = sp.current_user_top_artists(time_range='medium_term', limit=20)
+    
+    # Extract the artist names from the response and print them out.
+    artists = [artist['name'] for artist in results['items']]
+    print('Your top artists:')
+    for artist in artists:
+        print(artist)

@@ -8,15 +8,24 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mui/material": "^5.10.17",
+    "axios": "^0.24.0",
     "classnames": "^2.2.6",
+    "d3": "7.1.1",
     "isexe": "^2.0.0",
     "lodash": "^4.17.15",
+    "plotly.js": "^2.22.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-plotly.js": "^2.6.0",
     "react-router-dom": "^5.1.2",
     "react-scripts": "^5.0.1",
     "react-select": "^5.7.0",
-    "sass": "^1.49.7"
+    "sass": "^1.49.7",
+    "spotify-web-api-js": "^1.5.2"
+  },
+  "devDependencies": {
+    "@babel/runtime": "7.13.8",
+    "typescript": "4.1.3"
   },
   "repository": {
     "type": "git",

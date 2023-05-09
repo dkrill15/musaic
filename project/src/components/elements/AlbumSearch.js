@@ -100,7 +100,7 @@ function AlbumSearch() {
       updated: new Date(),
     })
 
-    fetch('http://db8.cse.nd.edu:5014/add?q=' + search + "&num=" + 9, {method: "POST"}).then(response => response.json().then((fetch_data) => {
+    fetch('http://10.29.69.172:5014/add?q=' + search + "&num=" + 9, {method: "POST"}).then(response => response.json().then((fetch_data) => {
       // Setting a data from api
         setdata({
           song: fetch_data.song,
@@ -146,7 +146,8 @@ function AlbumSearch() {
       }
     }
 
-    fetch('http://db8.cse.nd.edu:5014/create?cart=' + cartStr + "&sort=" + sort + "&arrange=" + arrange, {method: "POST"}).then(response => response.json().then((fetch_data) => {
+    fetch('localhost:5014/create?cart=' + cartStr + "&sort=" + sort + "&arrange=" + arrange, {method: "POST"}).then(response => response.json().then((fetch_data) => {
+      console.log(fetch_data.result);
       if(fetch_data.result == "success") {
         musaic_path = fetch_data.path
         setdata({
@@ -302,7 +303,7 @@ function AlbumSearch() {
               </div>
             </div>
           </div>
-          <Button color="primary" type="submit" style={{marginLeft: "1em"}}>Create</Button>
+          <Button color="primary" type="submit" style={{marginLeft: "1em"}}>Create!!!</Button>
       </form>
 
       <h1>My Result</h1>

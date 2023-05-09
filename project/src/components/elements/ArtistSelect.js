@@ -21,15 +21,20 @@ export default function ArtistSelect(props) {
 
   //const optionList = [{"label": 'weird', "value" : 0}, {"label": 'cool', "value" : 7}] //get_genres();
 
-  const optionList = props.list
-  //console.log(optionList);
+  const optionList = props.props;
+
+  var optionsList = [];
+  optionList.forEach(function (element) {
+    optionsList.push({ "label": element.name , "id": element.id})
+  });
+
 
 
 
   // Function triggered on selection
   function handleSelect(data) {
     setSelectedOptions(data);
-    console.log(optionList);
+    console.log(optionsList);
     props.update(data);
 }
 
@@ -38,12 +43,11 @@ export default function ArtistSelect(props) {
       <h2>Select Artists</h2>
       <div className="dropdown-container">
         <Select
-          options={optionList}
+          options={optionsList}
           placeholder="Search Musaic database"
           value={selectedOptions}
           onChange={handleSelect}
           isSearchable={true}
-          isMulti
         />
       </div>
     </div>

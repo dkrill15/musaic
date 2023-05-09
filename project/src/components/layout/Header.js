@@ -170,6 +170,9 @@ const Header = ({
                     <li>
                       <Link to="/musify">Musify</Link>
                     </li>
+                    <li>
+                      <Link to="/taste">Tastify</Link>
+                    </li>
                   </ul>
                   {/* {!hideSignin &&
                     <ul
