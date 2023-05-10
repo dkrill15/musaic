@@ -20,7 +20,7 @@ from spotipy.oauth2 import SpotifyOAuth
 from flask_sqlalchemy import SQLAlchemy
 from db_manager import db_session
 from classes import Artist, User
-from sqlalchemy import create_engine, select
+from sqlalchemy import create_engine, select, exc
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.exc import IntegrityError
 
@@ -41,7 +41,12 @@ app.secret_key = secret
 headers = werkzeug.datastructures.Headers()
 headers.add('Content-Type', 'image/png')
 
-engine = create_engine('postgresql://tynsxjqtfhievn:2d2cebfcec88756323909dbbad2323a7695b38d55161d3083f4c7ab06ea8a683@ec2-52-5-167-89.compute-1.amazonaws.com:5432/dfoch0qct6ehfr')
+
+mode = "DEV"
+if mode == "DEV":
+    engine = create_engine('postgresql://localhost:5014/tastify')
+else:
+    engine = create_engine('postgresql://tynsxjqtfhievn:2d2cebfcec88756323909dbbad2323a7695b38d55161d3083f4c7ab06ea8a683@ec2-52-5-167-89.compute-1.amazonaws.com:5432/dfoch0qct6ehfr')
 db_session = scoped_session(sessionmaker(autocommit=False, autoflush=False, bind=engine, expire_on_commit = False))
 
 
@@ -95,6 +100,24 @@ def get_user_info():
 
     all_top_ids = list(dict.fromkeys(all_top_ids))
     all_popularity = list(dict.fromkeys(all_popularity))
+
+    user = sp.current_user()
+    db_session.add(User(user["id"], pop_score["long_term"], pop_score["medium_term"], pop_score["short_term"], 
+                mood_score["long_term"], mood_score["medium_term"], mood_score["short_term"], 
+                user["images"][0].get("url", ""), True, datetime.datetime.now()))
+    try:
+        db_session.commit()
+    except exc.IntegrityError:
+        db_session.query(User).filter(User.id == user["id"]).delete()
+        db_session.add(User(user["id"], pop_score["long_term"], pop_score["medium_term"], pop_score["short_term"], 
+            mood_score["long_term"], mood_score["medium_term"], mood_score["short_term"], 
+            user["images"][0].get("url", ""), True, datetime.datetime.now()))
+        try:
+            db_session.commit()
+        except exc.SQLAlchemyError:
+            print('big zonK')
+
+
 
     # pop_score["all_time"] = reduce(lambda x, y: x+y, all_popularity) / len(all_popularity)
 

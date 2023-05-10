@@ -253,13 +253,13 @@ const App = (
                     <div className="center-content mt-0 mb-12">
 
                         {!token ?
-                            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Fucking prove it</a>
+                            <a href={`${AUTH_ENDPOINT}?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`}>Login to Spotify</a>
                             : <Button onClick={logout}>Logout</Button>}
 
                         {token ?
                             <div>
                                 <form onSubmit={onGet}>
-                                    <Button type={"submit"}>Show me them dots</Button>
+                                    <Button type={"submit"}>Show my taste 👅</Button>
                                 </form>
                             </div>
 
