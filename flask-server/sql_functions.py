@@ -5,7 +5,7 @@ import csv
 # globals
 hostname = 'localhost'
 username = 'root'
-pw = 'unebarque3'
+pw = 'impressionistpiano'
 db = 'musaic'
 
 
